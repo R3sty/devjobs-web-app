@@ -1,0 +1,64 @@
+* {
+  outline: 1px red solid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pc-V: #5964E0;
+  --pc-LV: #939bf4;
+  --pc-VDB: #19202D;
+  --pc-M: #121721;
+  --sc-W: #fff;
+  --sc-LG: #f4f6f8;
+  --sc-G: #9daec2;
+  --sc-DG: #6e8098;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+/*header*/
+header {
+  background-image: url(./assets/mobile/bg-pattern-header.svg);
+  width: 100%;
+  max-width: 430px;
+  height: 136px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30%;
+}
+
+.theme-container {
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-toggle {
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--pc-V);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.theme-toggle.active .toggle-circle { /*For when i use JavaScript to move and toggle the dark mode.*/
+  transform: translateX(22px);
+}
+
