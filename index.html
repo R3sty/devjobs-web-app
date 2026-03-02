@@ -1,39 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap" rel="stylesheet">
-  <script src="./script.js" defer></script>
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" />
 
-    <div class="theme-container">
-      <img src="./assets/desktop/icon-sun.svg" alt="">
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="toggle-circle"></span>
-      </button>
-      <img src="./assets/desktop/icon-moon.svg" alt="">
-    </div>
-  </header>
-  <main>
-    <div class="search-bar">
-      <form action="" class="search-form">
-        <input type="search" placeholder="Filter by title...">
+      <div class="theme-container">
+        <img src="./assets/desktop/icon-sun.svg" alt="" />
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="toggle-circle"></span>
+        </button>
+        <img src="./assets/desktop/icon-moon.svg" alt="" />
+      </div>
+    </header>
+    <main>
+      <form action="" class="search-bar">
+        <input
+          type="search"
+          placeholder="Filter by title..."
+          class="search-input"
+        />
         <button class="location-btn">
-          <img src="./assets/mobile/icon-filter.svg" alt="">
+          <img src="./assets/mobile/icon-filter.svg" alt="" />
         </button>
         <button class="search-btn">
-          <img src="./assets/desktop/icon-search.svg" alt="" class="search-icon">
+          <img
+            src="./assets/desktop/icon-search.svg"
+            alt=""
+            class="search-icon"
+          />
         </button>
       </form>
-    </div>
-  </main>
-</body>
+
+      <div class="job-container">
+        <div class="job-card">
+          <div class="logo-container logo-scoot">
+            <img
+              src="./assets/logos/scoot.svg"
+              alt="scoot logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>5h ago · Full Time</p>
+            <h3>Senior Software Engineer</h3>
+            <span class="comp-name"> Scoot </span>
+            <span class="highlight">United Kingdom</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <section></section>
+        </div>
+
+        <div class="job-card">
+          <section></section>
+        </div>
+
+        <div class="job-card">
+          <section></section>
+        </div>
+
+        <div class="job-card">
+          <section></section>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
