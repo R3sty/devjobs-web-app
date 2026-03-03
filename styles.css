@@ -20,6 +20,16 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sc-LG);
+  position: relative;
+}
+
+
 /*header*/
 header {
   background-image: url(./assets/mobile/bg-pattern-header.svg);
@@ -60,16 +70,8 @@ header {
   transition: transform 0.3s ease;
 }
 
-.theme-toggle.active .toggle-circle { /*For when i use JavaScript to move and toggle the dark mode.*/
+.theme-toggle.active .toggle-circle { /*For when i use JavaScript to move the circle and toggle the dark mode.*/
   transform: translateX(22px);
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--sc-LG);
-  position: relative;
 }
 
 .search-bar {
@@ -83,12 +85,12 @@ main {
   background-color: var(--sc-W);
   position: absolute;
   top: -40px;
-  
 }
 
 .location-btn {
   border: none;
   background-color: var(--sc-W);
+  cursor: pointer;
 }
 
 .search-btn {
@@ -97,54 +99,113 @@ main {
   border-radius: 5px;
   border: none;
   background-color: var(--pc-V);
+  cursor: pointer;
 }
 
 .search-input {
   color: var(--pc-VDB);
   height: 30px;
   border: none;
+  cursor: pointer;
+}
+
+.search-logo, .location-input, .location-logo, .full-time, .dt-search {
+  display: none;
 }
 
 .search-icon {
   filter: brightness(0) invert(1);
 }
 
-.job-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  padding: 5px;
+/*tablet*/
+@media (min-width: 768px) {
+  header {
+    width: 100%;
+    max-width: 100%;
+    background-image: url(./assets/tablet/bg-pattern-header.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 690px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-btn {
+    display: none;
+  }
+
+  .search-logo, .location-input, .location-logo, .full-time, .dt-search {
+    display: flex;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 230px;
+  }
+
+  .location-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    gap: 8px;
+    width: 230px;
+  }
+
+  .location-input {
+    color: var(--pc-VDB);
+    height: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .location-btn {
+    display: none;
+  }
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 230px;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .dt-search {
+    width: 80px;
+    height: 48px;
+    background-color: var(--pc-V);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sc-W);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
 }
 
-.job-card {
-  width: 340px;
-  padding: 5px;
-  position: relative;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-}
-
-.logo-scoot {
-  background-color: #e99210;
-  position: absolute;
-  top: -35px;
-}
-
-.job-info {
-  margin: 25px 10px;
-}
-
-.dot-sep {
-  width: 5px;
-  height: 5px;
-  background-color: var(--sc-DG);
+/*desktop*/
+@media (min-width: 1024px) {
+  
 }
