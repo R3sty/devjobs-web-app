@@ -1,5 +1,5 @@
 * {
-  outline: 1px red solid;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,7 +17,10 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--sc-LG);
 }
 
 main {
@@ -25,7 +28,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--sc-LG);
   position: relative;
 }
 
@@ -72,6 +74,10 @@ header {
 
 .theme-toggle.active .toggle-circle { /*For when i use JavaScript to move the circle and toggle the dark mode.*/
   transform: translateX(22px);
+}
+
+.theme-toggle:hover .toggle-circle{
+  background-color: var(--pc-LV);
 }
 
 .search-bar {
@@ -144,6 +150,11 @@ header {
     display: flex;
   }
 
+  .location-logo  {
+    height: 26px;
+    width: 18px;
+  }
+
   .search-wrapper {
     display: flex;
     flex-direction: row;
@@ -182,6 +193,10 @@ header {
     width: 230px;
   }
 
+  .d-only {
+    display: none;
+  }
+
   .checkbox {
     width: 24px;
     height: 24px;
@@ -203,9 +218,44 @@ header {
     margin-left: 15px;
     cursor: pointer;
   }
+
+  .dt-search:hover {
+    background-color: var(--pc-LV);
+  }
 }
 
 /*desktop*/
 @media (min-width: 1024px) {
-  
+  html, body {
+    height: 100%;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  header {
+    background-image: url(./assets/desktop/bg-pattern-header.svg);
+  }
+
+  .search-bar {
+    max-width: 1110px;
+  }
+
+  .search-wrapper, .location-wrapper, .button-wrapper {
+    width: 370px;
+  }
+
+  .d-only {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .dt-search {
+    width: 125px;
+  }
+
+  .search-input, .location-input {
+    width: 300px;
+  }
 }
