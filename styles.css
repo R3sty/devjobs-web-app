@@ -1,4 +1,5 @@
 * {
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -114,7 +115,7 @@ header {
   cursor: pointer;
 }
 
-.search-logo, .location-input, .location-logo, .full-time, .dt-search {
+.search-logo, .location-input, .location-logo, .full-time, .search-btn--txt {
   display: none;
 }
 
@@ -145,7 +146,7 @@ header {
     display: none;
   }
 
-  .search-logo, .location-input, .location-logo, .full-time, .dt-search {
+  .search-logo, .location-input, .location-logo, .full-time, .search-btn--txt {
     display: flex;
   }
 
@@ -202,7 +203,7 @@ header {
     cursor: pointer;
   }
 
-  .dt-search {
+  .search-btn--txt {
     width: 80px;
     height: 48px;
     background-color: var(--pc-V);
@@ -218,7 +219,7 @@ header {
     cursor: pointer;
   }
 
-  .dt-search:hover {
+  .search-btn--txt:hover {
     background-color: var(--pc-LV);
   }
 }
@@ -250,7 +251,7 @@ header {
     margin-left: 5px;
   }
 
-  .dt-search {
+  .search-btn--txt {
     width: 125px;
   }
 
