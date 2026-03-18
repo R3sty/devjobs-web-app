@@ -1,0 +1,261 @@
+* {
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pc-V: #5964E0;
+  --pc-LV: #939bf4;
+  --pc-VDB: #19202D;
+  --pc-M: #121721;
+  --sc-W: #fff;
+  --sc-LG: #f4f6f8;
+  --sc-G: #9daec2;
+  --sc-DG: #6e8098;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--sc-LG);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+/*header*/
+header {
+  background-image: url(./assets/mobile/bg-pattern-header.svg);
+  width: 100%;
+  max-width: 430px;
+  height: 136px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 40px;
+  gap: 25%;
+}
+
+.theme-container {
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-toggle {
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--pc-V);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle.active .toggle-circle { /*For when i use JavaScript to move the circle and toggle the dark mode.*/
+  transform: translateX(22px);
+}
+
+.theme-toggle:hover .toggle-circle{
+  background-color: var(--pc-LV);
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 340px;
+  height: 80px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--sc-W);
+  position: absolute;
+  top: -40px;
+}
+
+.location-btn {
+  border: none;
+  background-color: var(--sc-W);
+  cursor: pointer;
+}
+
+.search-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--pc-V);
+  cursor: pointer;
+}
+
+.search-input {
+  color: var(--pc-VDB);
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-logo, .location-input, .location-logo, .full-time, .search-btn--txt {
+  display: none;
+}
+
+.search-icon {
+  filter: brightness(0) invert(1);
+}
+
+/*tablet*/
+@media (min-width: 768px) {
+  header {
+    width: 100%;
+    max-width: 100%;
+    background-image: url(./assets/tablet/bg-pattern-header.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 690px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-btn {
+    display: none;
+  }
+
+  .search-logo, .location-input, .location-logo, .full-time, .search-btn--txt {
+    display: flex;
+  }
+
+  .location-logo  {
+    height: 26px;
+    width: 18px;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 230px;
+  }
+
+  .location-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    gap: 8px;
+    width: 230px;
+  }
+
+  .location-input {
+    color: var(--pc-VDB);
+    height: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .location-btn {
+    display: none;
+  }
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 230px;
+  }
+
+  .d-only {
+    display: none;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .search-btn--txt {
+    width: 80px;
+    height: 48px;
+    background-color: var(--pc-V);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sc-W);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .search-btn--txt:hover {
+    background-color: var(--pc-LV);
+  }
+}
+
+/*desktop*/
+@media (min-width: 1024px) {
+  html, body {
+    height: 100%;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  header {
+    background-image: url(./assets/desktop/bg-pattern-header.svg);
+  }
+
+  .search-bar {
+    max-width: 1110px;
+  }
+
+  .search-wrapper, .location-wrapper, .button-wrapper {
+    width: 370px;
+  }
+
+  .d-only {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .search-btn--txt {
+    width: 125px;
+  }
+
+  .search-input, .location-input {
+    width: 300px;
+  }
+}

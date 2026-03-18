@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+    <title>Devjobs</title>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" />
+
+      <div class="theme-container">
+        <img src="./assets/desktop/icon-sun.svg" alt="" />
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="toggle-circle"></span>
+        </button>
+        <img src="./assets/desktop/icon-moon.svg" alt="" />
+      </div>
+    </header>
+    <main>
+      <form action="" class="search-bar">
+        <div class="search-wrapper">
+          <img
+            src="./assets/desktop/icon-search.svg"
+            alt=""
+            class="search-logo"
+          />
+          <input
+            type="search"
+            placeholder="Filter by title..."
+            class="search-input"
+            aria-label="Filter by title"
+          />
+        </div>
+
+        <div class="location-wrapper">
+          <img
+            src="./assets/desktop/icon-location.svg"
+            alt=""
+            class="location-logo"
+          />
+          <input
+            type="text"
+            placeholder="Filter by location..."
+            class="location-input"
+            aria-label="Filter by location"
+          />
+
+          <button
+            type="button"
+            class="location-btn"
+            aria-label="Filter Location"
+          >
+            <img
+              src="./assets/mobile/icon-filter.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <div class="button-wrapper">
+          <input
+            type="checkbox"
+            id="full-time"
+            name="full-time"
+            class="full-time checkbox"
+          />
+          <label for="full-time" class="full-time"
+            >Full Time <span class="d-only">Only</span></label
+          >
+          <button type="submit" class="search-btn--txt">Search</button>
+          <button type="submit" class="search-btn" aria-label="Search Jobs">
+            <img
+              src="./assets/desktop/icon-search.svg"
+              alt=""
+              class="search-icon"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+      </form>
+
+      <div class="job-container">
+        <div class="job-card">
+          <div class="logo-container logo-scoot">
+            <img
+              src="./assets/logos/scoot.svg"
+              alt="scoot company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>5h ago · Full Time</p>
+            <h3>Senior Software Engineer</h3>
+            <p class="comp-name">Scoot</p>
+            <span class="highlight">United Kingdom</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <div class="logo-container logo-blogr">
+            <img
+              src="./assets/logos/blogr.svg"
+              alt="blogr company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>20h ago · Part Time</p>
+            <h3>Haskell and PureScript Dev</h3>
+            <p class="comp-name">Blogr</p>
+            <span class="highlight">United States</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <div class="logo-container logo-vector">
+            <img
+              src="./assets/logos/vector.svg"
+              alt="vector company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>1d ago · Part Time</p>
+            <h3>Midlevel Back End Engineer</h3>
+            <p class="comp-name">Vector</p>
+            <span class="highlight">Russia</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <div class="logo-container logo-officelite">
+            <img
+              src="./assets/logos/officelite.svg"
+              alt="office lite company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>2d ago · Full Time</p>
+            <h3>Senior Application Engineer</h3>
+            <p class="comp-name">Office Lite</p>
+            <span class="highlight">United States</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <div class="logo-container logo-pod">
+            <img
+              src="./assets/logos/pod.svg"
+              alt="pod company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>2d ago · Part Time</p>
+            <h3>Remote DevOps Engineer</h3>
+            <p class="comp-name">Pod</p>
+            <span class="highlight">Thailand</span>
+          </section>
+        </div>
+
+        <div class="job-card">
+          <div class="logo-container logo-creative">
+            <img
+              src="./assets/logos/creative.svg"
+              alt="creative company logo"
+              class="job-logo"
+            />
+          </div>
+          <section class="job-info">
+            <p>4d ago · Part Time</p>
+            <h3>Desktop Support manager</h3>
+            <p class="comp-name">Creative</p>
+            <span class="highlight">Germany</span>
+          </section>
+        </div>
+      </div>
+
+      <button class="load-btn">Load More</button>
+    </main>
+  </body>
+</html>
