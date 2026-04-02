@@ -1,23 +1,37 @@
-const rendJob = document.querySelector('.job-container'); 
+const jobContainer = document.querySelector('.job-container'); 
 
-fetch('./data.json') // request or grab a file called data.json
-  .then(res => res.json()) // converts the response(res) which is the file i fetched into a usable Javascript data
-  .then(data => { // data is now a JS object/array created from json files
-    data.forEach(jobs => { // loop throught tehe array/object one item at a time. For each objects call it jobs and run this function. jobs = one single job objects. 
-      rendJob.insertAdjacentHTML('beforeend', // evvery time the loop runs it creates a job card and insert it in rendJob which is the job-contaiener. with beforeend we add each new job inside the element at the end of its last child
+fetch('./data.json') 
+  .then(res =>  {
+    if (!res.ok) {
+      throw new Error('Failed to load job data');
+    }
+    return res.json()
+  }) 
+  .then(data => { 
+    data.forEach(job => { 
+      jobContainer.insertAdjacentHTML('beforeend', 
         ` <div class="job-card">
-          <div class="logo-container" style="background-color: ${jobs.logoBackground};">
+          <div class="logo-container" style="background-color: ${job.logoBackground};">
             <img
-              src="${jobs.logo}"
+              src="${job.logo}"
             />
           </div>
           <section class="job-info">
-            <p>${jobs.postedAt} · ${jobs.contract}</p>
-            <h3>${jobs.position}</h3>
-            <p class="comp-name">${jobs.company}</p>
-            <span class="highlight">${jobs.location}</span>
+            <p>${job.postedAt} · ${job.contract}</p>
+            <h3>${job.position}</h3>
+            <p class="comp-name">${job.company}</p>
+            <span class="highlight">${job.location}</span>
           </section>
         </div>`
       );
     });
+  })
+  .catch(err => {
+    console.error('load jobs failed', err);
   });
+
+  //Note: This app needs to run from http://localhost, not by double-clicking the file.
+
+  //When you open an HTML file directly, the browser treats it as a local file. Browsers block fetch requests from local files for security reasons.
+
+  //Running the app on http:// allows fetch to work properly. You can use a simple local server like Live Server in VS Code or Python's built-in HTTP server to serve your files.
