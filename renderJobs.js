@@ -8,6 +8,7 @@ fetch('./data.json')
     return res.json()
   }) 
   .then(data => { 
+    jobContainer.innerHTML = ''; //removesthe loading text
     data.forEach(job => { 
       jobContainer.insertAdjacentHTML('beforeend', 
         ` <div class="job-card">
