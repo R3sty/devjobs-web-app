@@ -76,7 +76,7 @@ header {
   transform: translateX(22px);
 }
 
-.theme-toggle:hover .toggle-circle{
+.theme-toggle:hover .toggle-circle, .theme-toggle:focus .toggle-circle {
   background-color: var(--pc-LV);
 }
 
@@ -106,6 +106,10 @@ header {
   border: none;
   background-color: var(--pc-V);
   cursor: pointer;
+}
+
+.search-btn:hover, .search-btn:focus {
+  background-color: var(--pc-LV);
 }
 
 .search-input {
@@ -219,7 +223,7 @@ header {
     cursor: pointer;
   }
 
-  .search-btn--txt:hover {
+  .search-btn--txt:hover, .search-btn--txt:focus {
     background-color: var(--pc-LV);
   }
 }
