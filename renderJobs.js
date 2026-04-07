@@ -40,23 +40,27 @@ fetch('./data.json')
   //Running the app on http:// allows fetch to work properly. You can use a simple local server like Live Server in VS Code or Python's built-in HTTP server to serve your files.
 
 
-  //Job title filtering
 
+//Job title filtering
 const titleInput = document.querySelector('.search-input'); 
+const locationInput = document.querySelector('.location-input');
+const fullTimeCheckBox = document.querySelector('#full-time');
 
 const filterJobs = () => { 
   const titleValue = titleInput.value.toLowerCase(); 
+  const locationValue = locationInput.value.toLowerCase();
+  const isFullTime = fullTimeCheckBox.checked;
 
   let filteredJobs = [];
 
   for (let job of jobs) {
-    if (job.position.toLowerCase().includes(titleValue)) {
+    if (job.position.toLowerCase().includes(titleValue) && job.location.toLowerCase().includes(locationValue) && (!isFullTime || job.contract.toLowerCase())) {
       filteredJobs.push(job);
     }
   }
   jobContainer.innerHTML = ''; 
   if (filteredJobs.length === 0) {
-    jobContainer.innerHTML = '<p>No jobs found</p>';
+    jobContainer.innerHTML = '<div class="empty-wrapper"><p>No jobs found</p></div>';
     return;
   }
 
@@ -80,3 +84,5 @@ const filterJobs = () => {
 }
 
 titleInput.addEventListener('input', filterJobs);
+locationInput.addEventListener('input', filterJobs);
+fullTimeCheckBox.addEventListener('change', filterJobs);

@@ -73,6 +73,13 @@
   background-color: var(--pc-LV);
 }
 
+.empty-wrapper {
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 50px;
+  font-size: 1.2rem;
+}
+
 /*tablet: 2-column grid layout*/
 @media (min-width: 768px) {
   .job-container {
