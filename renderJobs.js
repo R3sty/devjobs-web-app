@@ -9,7 +9,7 @@ fetch('./data.json')
     return res.json()
   }) 
   .then(data => { 
-    jobContainer.innerHTML = ''; //removesthe loading text
+    jobContainer.innerHTML = '';
     jobs = data;
     data.forEach(job => { 
       jobContainer.insertAdjacentHTML('beforeend', 
@@ -42,10 +42,10 @@ fetch('./data.json')
 
   //Job title filtering
 
-const titleInput = document.querySelector('.search-input'); //DOM selection
+const titleInput = document.querySelector('.search-input'); 
 
-const filterJobs = () => { // filter function
-  const titleValue = titleInput.value.toLowerCase(); //.value is common use for html form elements. allows me to get or set the data a user has typed into the input.
+const filterJobs = () => { 
+  const titleValue = titleInput.value.toLowerCase(); 
 
   let filteredJobs = [];
 
@@ -54,7 +54,11 @@ const filterJobs = () => { // filter function
       filteredJobs.push(job);
     }
   }
-  jobContainer.innerHTML = ''; //clear existing jobs
+  jobContainer.innerHTML = ''; 
+  if (filteredJobs.length === 0) {
+    jobContainer.innerHTML = '<p>No jobs found</p>';
+    return;
+  }
 
   filteredJobs.forEach(job => {
     jobContainer.insertAdjacentHTML('beforeend',
@@ -75,4 +79,4 @@ const filterJobs = () => { // filter function
   });
 }
 
-titleInput.addEventListener('input', filterJobs);//Event Listener
+titleInput.addEventListener('input', filterJobs);
