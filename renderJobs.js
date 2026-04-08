@@ -51,13 +51,13 @@ const filterJobs = () => {
   const locationValue = locationInput.value.toLowerCase();
   const isFullTime = fullTimeCheckBox.checked;
 
-  let filteredJobs = [];
-
-  for (let job of jobs) {
-    if (job.position.toLowerCase().includes(titleValue) && job.location.toLowerCase().includes(locationValue) && (!isFullTime || job.contract.toLowerCase())) {
-      filteredJobs.push(job);
-    }
-  }
+  const filteredJobs = jobs.filter(job => {
+    return (
+      job.position.toLowerCase().includes(titleValue) &&
+      job.location.toLowerCase().includes(locationValue) &&
+      (!isFullTime || job.contract.toLowerCase() === "full time")
+    );
+  });
   jobContainer.innerHTML = ''; 
   if (filteredJobs.length === 0) {
     jobContainer.innerHTML = '<div class="empty-wrapper"><p>No jobs found</p></div>';
