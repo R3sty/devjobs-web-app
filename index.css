@@ -75,7 +75,7 @@
 
 .empty-wrapper {
   text-align: center;
-  grid-column: 1 / -1;
+  grid-column: 1 / -1; /*makes the message span all column*/
   margin-top: 50px;
   font-size: 1.2rem;
 }
