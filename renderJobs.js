@@ -46,10 +46,13 @@ const titleInput = document.querySelector('.search-input');
 const locationInput = document.querySelector('.location-input');
 const fullTimeCheckBox = document.querySelector('#full-time');
 
+const locationInputModal = document.querySelector('.location-input-modal') //added for the modal filtering
+const fullTimeCheckboxModal = document.querySelector('#full-time-modal')
+
 const filterJobs = () => { 
   const titleValue = titleInput.value.toLowerCase(); 
-  const locationValue = locationInput.value.toLowerCase();
-  const isFullTime = fullTimeCheckBox.checked;
+  const locationValue = (locationInput.value || locationInputModal.value).toLowerCase(); //pick whichever has value then lowercase the value.
+  const isFullTime = fullTimeCheckBox.checked || fullTimeCheckboxModal.checked;
 
   const filteredJobs = jobs.filter(job => {
     return (
@@ -86,3 +89,5 @@ const filterJobs = () => {
 titleInput.addEventListener('input', filterJobs);
 locationInput.addEventListener('input', filterJobs);
 fullTimeCheckBox.addEventListener('change', filterJobs);
+locationInputModal.addEventListener('input', filterJobs);
+fullTimeCheckboxModal.addEventListener('change', filterJobs);
