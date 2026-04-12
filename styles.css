@@ -276,6 +276,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+
+.modal-container.active {
+  display: flex;
 }
 
 .modal {
@@ -322,6 +327,12 @@ header {
   flex-wrap: wrap;
 }
 
+.ft-checkbox {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
 .search-btn-modal {
   width: 280px;
   height: 50px;
@@ -330,4 +341,5 @@ header {
   margin: 20px;
   background-color: var(--pc-V);
   color: var(--sc-W);
+  cursor: pointer;
 }
