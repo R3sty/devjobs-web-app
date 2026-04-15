@@ -42,3 +42,64 @@ fetch('./data.json')
 
 
 //Job title filtering
+const titleInput = document.querySelector('.search-input'); 
+const locationInput = document.querySelector('.location-input');
+const fullTimeCheckBox = document.querySelector('#full-time');
+
+const locationInputModal = document.querySelector('.location-input-modal') //added for the modal filtering
+const fullTimeCheckboxModal = document.querySelector('#full-time-modal')
+
+const filterJobs = () => { 
+  const titleValue = titleInput.value.toLowerCase(); 
+  const locationValue = locationInput.value.toLowerCase(); //pick whichever has value then lowercase the value.
+  const isFullTime = fullTimeCheckBox.checked || fullTimeCheckboxModal.checked;
+
+  const filteredJobs = jobs.filter(job => {
+    return (
+      job.position.toLowerCase().includes(titleValue) &&
+      job.location.toLowerCase().includes(locationValue) &&
+      (!isFullTime || job.contract.toLowerCase() === "full time")
+    );
+  });
+  jobContainer.innerHTML = ''; 
+  if (filteredJobs.length === 0) {
+    jobContainer.innerHTML = '<div class="empty-wrapper"><p>No jobs found</p></div>';
+    return;
+  }
+
+  filteredJobs.forEach(job => {
+    jobContainer.insertAdjacentHTML('beforeend',
+      ` <div class="job-card">
+          <div class="logo-container" style="background-color: ${job.logoBackground};">
+            <img
+              src="${job.logo}"
+            />
+          </div>
+          <section class="job-info">
+            <p>${job.postedAt} · ${job.contract}</p>
+            <h3>${job.position}</h3>
+            <p class="comp-name">${job.company}</p>
+            <span class="highlight">${job.location}</span>
+          </section>
+        </div>`
+    );
+  });
+}
+
+titleInput.addEventListener('input', filterJobs);
+locationInput.addEventListener('input', () => {//added for the modal filtering. sync the value of the location input in the main page and the modal.
+  locationInputModal.value = locationInput.value;// copy the value of the location input in the main page to the location input in the modal.
+  filterJobs();
+});
+fullTimeCheckBox.addEventListener('change', () => {
+  fullTimeCheckboxModal.checked = fullTimeCheckBox.checked;
+  filterJobs();
+});
+locationInputModal.addEventListener('input', () => {
+  locationInput.value = locationInputModal.value;
+  filterJobs();
+});
+fullTimeCheckboxModal.addEventListener('change', () => {
+  fullTimeCheckBox.checked = fullTimeCheckboxModal.checked;
+  filterJobs();
+});
