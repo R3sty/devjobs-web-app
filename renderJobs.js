@@ -102,4 +102,8 @@ locationInputModal.addEventListener('input', () => {
 fullTimeCheckboxModal.addEventListener('change', () => {
   fullTimeCheckBox.checked = fullTimeCheckboxModal.checked;
   filterJobs();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 4044a2a (removed the unecessary note and updated the repeating logic for a much more cleaner code.)
