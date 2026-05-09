@@ -89,9 +89,3 @@ fullTimeCheckboxModal.addEventListener('change', () => {
   fullTimeCheckBox.checked = fullTimeCheckboxModal.checked;
   filterJobs();
 });
-
-
-const syncFilter = (source, target) => {
-  target.value = source.value;
-  filterJobs();
-}
