@@ -1,19 +1,9 @@
 let jobs = [];
 const jobContainer = document.querySelector('.job-container'); 
 
-fetch('./data.json') 
-  .then(res =>  {
-    if (!res.ok) {
-      throw new Error('Failed to load job data');
-    }
-    return res.json()
-  }) 
-  .then(data => { 
-    jobContainer.innerHTML = '';
-    jobs = data;
-    data.forEach(job => { 
-      jobContainer.insertAdjacentHTML('beforeend', 
-        ` <div class="job-card">
+const jobRenderCard = (job) => {
+  jobContainer.insertAdjacentHTML('beforeend',
+    `<div class="job-card">
           <div class="logo-container" style="background-color: ${job.logoBackground};">
             <img
               src="${job.logo}"
@@ -26,8 +16,20 @@ fetch('./data.json')
             <span class="highlight">${job.location}</span>
           </section>
         </div>`
-      );
-    });
+  )
+}
+
+fetch('./data.json') 
+  .then(res =>  {
+    if (!res.ok) {
+      throw new Error('Failed to load job data');
+    }
+    return res.json()
+  }) 
+  .then(data => { 
+    jobContainer.innerHTML = '';
+    jobs = data;
+    data.forEach(job => {jobRenderCard(job)});
   })
   .catch(err => {
     console.error('load jobs failed', err);
@@ -67,23 +69,7 @@ const filterJobs = () => {
     return;
   }
 
-  filteredJobs.forEach(job => {
-    jobContainer.insertAdjacentHTML('beforeend',
-      ` <div class="job-card">
-          <div class="logo-container" style="background-color: ${job.logoBackground};">
-            <img
-              src="${job.logo}"
-            />
-          </div>
-          <section class="job-info">
-            <p>${job.postedAt} · ${job.contract}</p>
-            <h3>${job.position}</h3>
-            <p class="comp-name">${job.company}</p>
-            <span class="highlight">${job.location}</span>
-          </section>
-        </div>`
-    );
-  });
+  filteredJobs.forEach(job => {jobRenderCard(job)});
 }
 
 titleInput.addEventListener('input', filterJobs);
@@ -103,3 +89,9 @@ fullTimeCheckboxModal.addEventListener('change', () => {
   fullTimeCheckBox.checked = fullTimeCheckboxModal.checked;
   filterJobs();
 });
+
+
+const syncFilter = (source, target) => {
+  target.value = source.value;
+  filterJobs();
+}
