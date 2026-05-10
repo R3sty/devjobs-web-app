@@ -1,3 +1,25 @@
+// header component
+class SiteHeader extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <header>
+        <img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" />
+
+        <div class="theme-container">
+          <img src="./assets/desktop/icon-sun.svg" alt="" />
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-circle"></span>
+          </button>
+          <img src="./assets/desktop/icon-moon.svg" alt="" />
+        </div>
+      </header>
+    `;
+  }
+}
+customElements.define("site-header", SiteHeader);
+
+
+//Stop browser Default action 
 const form = document.querySelector('.search-bar');
 
 if (form) { 
