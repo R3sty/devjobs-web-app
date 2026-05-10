@@ -7,6 +7,7 @@ const jobRenderCard = (job) => {
           <div class="logo-container" style="background-color: ${job.logoBackground};">
             <img
               src="${job.logo}"
+              alt="${job.company} logo"
             />
           </div>
           <section class="job-info">
