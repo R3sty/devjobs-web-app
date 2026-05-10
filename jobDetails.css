@@ -1,0 +1,157 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.job-card {
+  width: 340px;
+  height: 210px;
+  padding: 10px;
+  margin: 20px 0 40px 0;
+  border-radius: 6px;
+  background-color: var(--sc-W);
+  position: relative;
+  top: -40px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  position: absolute;
+  top: -30px;
+  left: 145px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+h2, p {
+  margin: 10px 0;
+}
+
+.company-btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--sc-LG);
+  text-decoration: none;
+  color: var(--pc-V);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 13px;
+  margin: 15px 0;
+}
+
+.company-btn:hover {
+  background-color: var(--pc-LV);
+  color: var(--sc-W);
+}
+
+/*job detail*/
+.job-detail {
+  width: 340px;
+  padding: 15px;
+  background-color: var(--sc-W);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: -40px;
+}
+
+.info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info {
+  padding: 3px;
+  margin: 20px 0;
+}
+
+.info p {
+  color: var(--sc-DG);
+}
+
+.highlight {
+  color: var(--pc-V);
+  font-weight: 700;
+}
+
+.apply-btn {
+  width: 280px;
+  height: 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: var(--pc-V);
+  color: var(--sc-W);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 13px;
+  margin: 20px auto;
+}
+
+.apply-btn:hover {
+  background-color: var(--pc-LV);
+}
+
+.description, .requirements {
+  margin: 20px 0;
+}
+
+.description p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 26px;
+  color: var(--sc-DG);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.requirements p, ul {
+  font-weight: 400px;
+  font-size: 1rem;
+  line-height: 26px;
+  color: var(--sc-DG);
+}
+
+ul, ol, li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.role p, ol {
+  font-weight: 400px;
+  font-size: 1rem;
+  line-height: 26px;
+  color: var(--sc-DG);
+}
+
+
+.apply-container {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 6px;
+  padding: 20px;
+  background-color: var(--sc-W);
+  display: flex;
+}
