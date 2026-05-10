@@ -54,7 +54,7 @@ const fullTimeCheckboxModal = document.querySelector('#full-time-modal')
 
 const filterJobs = () => { 
   const titleValue = titleInput.value.toLowerCase(); 
-  const locationValue = locationInput.value.toLowerCase(); //pick whichever has value then lowercase the value.
+  const locationValue = locationInput.value.toLowerCase(); 
   const isFullTime = fullTimeCheckBox.checked || fullTimeCheckboxModal.checked;
 
   const filteredJobs = jobs.filter(job => {
@@ -75,7 +75,7 @@ const filterJobs = () => {
 
 titleInput.addEventListener('input', filterJobs);
 locationInput.addEventListener('input', () => {//added for the modal filtering. sync the value of the location input in the main page and the modal.
-  locationInputModal.value = locationInput.value;// copy the value of the location input in the main page to the location input in the modal.
+  locationInputModal.value = locationInput.value;
   filterJobs();
 });
 fullTimeCheckBox.addEventListener('change', () => {

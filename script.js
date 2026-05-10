@@ -1,8 +1,8 @@
 const form = document.querySelector('.search-bar');
 
-if (form) { // ensures .search-bar exists
+if (form) { 
   form.addEventListener('submit', (event) => {
-  event.preventDefault();// prevents the page to refresh when the form is submitted
+  event.preventDefault();
 });
 }
 
@@ -17,7 +17,7 @@ if (modalBtn && modalContainer) {
     modalContainer.classList.add("active");
   });
   modalContainer.addEventListener("click", (e) => {
-    if (e.target === modalContainer) { // // checks if the user clicked is the modalContainer or not.
+    if (e.target === modalContainer) { 
       modalContainer.classList.remove("active");
     }
   });
