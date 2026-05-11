@@ -64,7 +64,7 @@ const renderJob = (job) => {
         <a href="${job.website}" class="apply-btn"
           >Apply Now</a
         >`
-  ) //.map().join('') — .map() loops through the items array and wraps each one in a <li>, then .join('') stitches all those strings together into one string so it can be injected as HTML.
+  )
 }
 
 fetch('./data.json')
@@ -75,7 +75,7 @@ fetch('./data.json')
     return res.json()
   })
   .then(data => {
-    const job = data.find(j => String(j.id) === jobId);//data.find() is a built in array method that finds the first element that matches the condition. String(j.id) === jobId converts the id to a string for comparison, since URL parameters are strings.
+    const job = data.find(j => String(j.id) === jobId);
     if (!job) {
       document.querySelector('.job-detail').innerHTML = `
         <p>Job not found</p>
