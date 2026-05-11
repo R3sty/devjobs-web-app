@@ -37,6 +37,10 @@ main {
   padding: 10px;
 }
 
+.detail section {
+  text-align: center;
+}
+
 h2, p {
   margin: 10px 0;
 }

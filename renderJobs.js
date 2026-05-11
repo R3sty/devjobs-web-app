@@ -3,7 +3,7 @@ const jobContainer = document.querySelector('.job-container');
 
 const jobRenderCard = (job) => {
   jobContainer.insertAdjacentHTML('beforeend',
-    `<div class="job-card">
+    `<a href="jobDetail.html?id=${job.id}" class="job-card">
           <div class="logo-container" style="background-color: ${job.logoBackground};">
             <img
               src="${job.logo}"
@@ -16,7 +16,7 @@ const jobRenderCard = (job) => {
             <p class="comp-name">${job.company}</p>
             <span class="highlight">${job.location}</span>
           </section>
-        </div>`
+        </a>`
   )
 }
 
