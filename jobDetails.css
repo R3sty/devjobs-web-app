@@ -139,6 +139,10 @@ ul, ol, li {
   padding-left: 1.5rem;
 }
 
+li::marker {
+  color: var(--pc-V);
+}
+
 .role p, ol {
   font-weight: 400px;
   font-size: 1rem;
@@ -237,5 +241,19 @@ ul, ol, li {
 
 /*desktop*/
 @media (min-width: 1024px) {
-  
+  .job-card {
+    max-width: 1110px;
+  }
+
+  .detail {
+    gap: 350px;
+  }
+
+  .job-detail {
+    max-width: 1110px;
+  }
+
+  .info-container {
+    justify-content: space-between;
+  }
 }
