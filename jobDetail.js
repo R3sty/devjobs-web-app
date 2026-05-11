@@ -1,5 +1,5 @@
-const params = new URLSearchParams(window.location.search);// URLSearchParams is a built in browser tool that parses it. window.location.search grabs the ?id=1 part of the url
-const jobId = params.get('id');//puls the value of the id
+const params = new URLSearchParams(window.location.search);
+const jobId = params.get('id');
 
 const renderJob = (job) => {
   document.querySelector('.job-card').insertAdjacentHTML('beforeend', 
@@ -64,7 +64,7 @@ const renderJob = (job) => {
         <a href="${job.website}" class="apply-btn"
           >Apply Now</a
         >`
-  )
+  ) 
 }
 
 fetch('./data.json')
