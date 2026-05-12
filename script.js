@@ -3,7 +3,7 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <header>
-        <img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" />
+        <a href="index.html"><img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" /></a>
 
         <div class="theme-container">
           <img src="./assets/desktop/icon-sun.svg" alt="" />
