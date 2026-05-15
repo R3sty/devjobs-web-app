@@ -1,8 +1,30 @@
+// header component
+class SiteHeader extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <header>
+        <a href="index.html"><img src="./assets/desktop/logo.svg" alt="Site Logo" class="site-logo" /></a>
+
+        <div class="theme-container">
+          <img src="./assets/desktop/icon-sun.svg" alt="" />
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-circle"></span>
+          </button>
+          <img src="./assets/desktop/icon-moon.svg" alt="" />
+        </div>
+      </header>
+    `;
+  }
+}
+customElements.define("site-header", SiteHeader);
+
+
+//Stop browser Default action 
 const form = document.querySelector('.search-bar');
 
-if (form) { // ensures .search-bar exists
+if (form) { 
   form.addEventListener('submit', (event) => {
-  event.preventDefault();// prevents the page to refresh when the form is submitted
+  event.preventDefault();
 });
 }
 
@@ -17,7 +39,7 @@ if (modalBtn && modalContainer) {
     modalContainer.classList.add("active");
   });
   modalContainer.addEventListener("click", (e) => {
-    if (e.target === modalContainer) { // // checks if the user clicked is the modalContainer or not.
+    if (e.target === modalContainer) { 
       modalContainer.classList.remove("active");
     }
   });
