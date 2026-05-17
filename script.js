@@ -14,6 +14,10 @@ class SiteHeader extends HTMLElement {
         </div>
       </header>
     `;
+    const themeBtn = this.querySelector('.theme-toggle');
+    const toggleCircle = this.querySelector('.toggle-circle');
+
+    
   }
 }
 customElements.define("site-header", SiteHeader);
