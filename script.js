@@ -17,6 +17,9 @@ class SiteHeader extends HTMLElement {
     const themeBtn = this.querySelector('.theme-toggle');
     const toggleCircle = this.querySelector('.toggle-circle');
 
+    themeBtn.addEventListener("click", () => {
+      themeBtn.classList.toggle("active");
+    })
     
   }
 }
