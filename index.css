@@ -46,6 +46,7 @@ a {
   font-size: 1.4rem;
   line-height: 100%;
   margin: 15px 0;
+  color: var(--pc-M);
 }
 
 .comp-name {

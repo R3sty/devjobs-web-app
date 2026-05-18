@@ -15,10 +15,10 @@ class SiteHeader extends HTMLElement {
       </header>
     `;
     const themeBtn = this.querySelector('.theme-toggle');
-    const toggleCircle = this.querySelector('.toggle-circle');
 
     themeBtn.addEventListener("click", () => {
       themeBtn.classList.toggle("active");
+      document.body.classList.toggle("dark");
     })
     
   }

@@ -1,5 +1,4 @@
 * {
-  outline: 1px red solid;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,6 +15,13 @@
   --sc-DG: #6e8098;
 }
 
+.dark {
+  --pc-VDB: #fff;
+  --pc-M: #fff;
+  --sc-W: #19202D;
+  --sc-LG: #121721;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -29,6 +35,7 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-color: var(--sc-LG);
 }
 
 
@@ -43,6 +50,7 @@ header {
   align-items: center;
   padding-bottom: 40px;
   gap: 25%;
+  background-color: var(--sc-LG);
 }
 
 .theme-container {
@@ -76,10 +84,12 @@ header {
   transform: translateX(22px);
 }
 
-.theme-toggle:hover .toggle-circle, .theme-toggle:focus .toggle-circle {
+.theme-toggle:hover .toggle-circle {
   background-color: var(--pc-LV);
 }
 
+
+/*search bar*/
 .search-bar {
   width: 100%;
   max-width: 340px;
@@ -113,6 +123,7 @@ header {
 }
 
 .search-input {
+  background-color: var(--sc-W);
   color: var(--pc-VDB);
   height: 30px;
   border: none;
@@ -182,6 +193,7 @@ header {
     height: 30px;
     border: none;
     cursor: pointer;
+    background-color: var(--sc-W);
   }
 
   .location-btn {
@@ -205,6 +217,7 @@ header {
     width: 24px;
     height: 24px;
     cursor: pointer;
+    background-color: var(--sc-W);
   }
 
   .search-btn--txt {
@@ -310,6 +323,7 @@ header {
 }
 
 .location-input-modal {
+  background-color: var(--sc-W);
   color: var(--pc-VDB);
   height: 30px;
   border: none;
