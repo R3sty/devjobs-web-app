@@ -54,7 +54,7 @@ const modalBtn = document.querySelector(".location-btn");
 const modalContainer = document.querySelector(".modal-container");
 const searchModalBtn = document.querySelector(".search-btn-modal");
 
-if (modalBtn && modalContainer) {
+if (modalBtn && modalContainer && searchModalBtn) {
   modalBtn.addEventListener("click", () => {
     modalContainer.classList.add("active");
   });
