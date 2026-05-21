@@ -52,9 +52,8 @@ if (form) {
 
 const modalBtn = document.querySelector(".location-btn");
 const modalContainer = document.querySelector(".modal-container");
-const modalSearch = document.querySelector(".search-btn-modal");
 
-if (modalBtn && modalContainer && modalSearch) {
+if (modalBtn && modalContainer) {
   modalBtn.addEventListener("click", () => {
     modalContainer.classList.add("active");
   });
@@ -63,7 +62,4 @@ if (modalBtn && modalContainer && modalSearch) {
       modalContainer.classList.remove("active");
     }
   });
-  modalSearch.addEventListener("click", () => {
-    modalContainer.classList.remove("active");
-  })
 }
