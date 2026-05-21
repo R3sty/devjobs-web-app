@@ -52,7 +52,7 @@ if (form) {
 
 const modalBtn = document.querySelector(".location-btn");
 const modalContainer = document.querySelector(".modal-container");
-const searchModalBtn = document.querySelector("search-btn-modal");
+const searchModalBtn = document.querySelector(".search-btn-modal");
 
 if (modalBtn && modalContainer) {
   modalBtn.addEventListener("click", () => {
