@@ -14,6 +14,25 @@ class SiteHeader extends HTMLElement {
         </div>
       </header>
     `;
+    const themeBtn = this.querySelector('.theme-toggle');
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      themeBtn.classList.add("active");
+    }
+
+    themeBtn.addEventListener("click", () => {
+      themeBtn.classList.toggle("active");
+      document.body.classList.toggle("dark");
+
+      const isDark = document.body.classList.contains("dark");
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
   }
 }
 customElements.define("site-header", SiteHeader);
